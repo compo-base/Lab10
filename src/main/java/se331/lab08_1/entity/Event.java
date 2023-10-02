@@ -1,11 +1,9 @@
 package se331.lab08_1.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+import java.util.List;
 
 @Data
 @Builder
@@ -24,6 +22,9 @@ public class Event {
     String date;
     String time;
     Boolean petAllowed;
-    String organizer;
+    @ManyToOne
+    Organizer organizer;
+    @ManyToMany(mappedBy = "eventHistory")
+    List<Participant> participant;
 
 }

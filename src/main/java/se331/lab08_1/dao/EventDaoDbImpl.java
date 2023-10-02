@@ -6,9 +6,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Repository;
 import se331.lab08_1.entity.Event;
-import se331.lab08_1.entity.Organizer;
 import se331.lab08_1.repository.EventRepository;
-import se331.lab08_1.repository.OrganizerRepository;
+
 @Repository
 @RequiredArgsConstructor
 @Profile("db")
