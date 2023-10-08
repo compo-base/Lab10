@@ -18,7 +18,9 @@ public interface LabMapper {
     List<OrganizerDTO> getOrganizerDTO(List<Organizer> organizer);
     ParticipantDTO getParticipantDto(Participant participant);
     //mapping a list of participants
-    List<ParticipantDTO> getParticipantDto(List<Participant> participants);
+    List<ParticipantEventDTO> getParticipantEventDTO(List<Participant> participants);
+    @Mapping(source = "eventHistory", target = "events")
+    ParticipantEventDTO toParticipantEventDTO(Participant participant);
 
 }
 
