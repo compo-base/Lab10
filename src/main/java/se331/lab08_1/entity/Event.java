@@ -26,7 +26,7 @@ public class Event {
     Boolean petAllowed;
     @ManyToOne
     Organizer organizer;
-    @ManyToMany(mappedBy = "eventHistory")
+    @ManyToMany(mappedBy = "eventHistory", cascade = CascadeType.PERSIST)
     @Builder.Default
     List<Participant> participant = new ArrayList<>();
 
