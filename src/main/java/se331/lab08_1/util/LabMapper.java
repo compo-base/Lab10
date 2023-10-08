@@ -12,13 +12,10 @@ import java.util.List;
 public interface LabMapper {
     LabMapper INSTANCE = Mappers.getMapper(LabMapper.class);
 
-
-    @Mapping(source = "participant", target = "participants")
     EventDTO getEventDto(Event event);
     List<EventDTO> getEventDto(List<Event> events);
     OrganizerDTO getOrganizerDTO(Organizer organizer);
     List<OrganizerDTO> getOrganizerDTO(List<Organizer> organizer);
-    @Mapping(source = "eventHistory", target = "events")
     ParticipantDTO getParticipantDto(Participant participant);
 }
 
