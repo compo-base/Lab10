@@ -14,5 +14,4 @@ import java.util.List;
 public class ParticipantDTO {
     Long id;
     String name;
-    List<EventDTO> events ;
 }

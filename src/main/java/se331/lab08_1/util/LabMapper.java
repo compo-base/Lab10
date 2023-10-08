@@ -11,11 +11,14 @@ import java.util.List;
 @Mapper
 public interface LabMapper {
     LabMapper INSTANCE = Mappers.getMapper(LabMapper.class);
-
+    @Mapping(source = "participant", target = "participants")
     EventDTO getEventDto(Event event);
     List<EventDTO> getEventDto(List<Event> events);
     OrganizerDTO getOrganizerDTO(Organizer organizer);
     List<OrganizerDTO> getOrganizerDTO(List<Organizer> organizer);
     ParticipantDTO getParticipantDto(Participant participant);
+    //mapping a list of participants
+    List<ParticipantDTO> getParticipantDto(List<Participant> participants);
+
 }
 
