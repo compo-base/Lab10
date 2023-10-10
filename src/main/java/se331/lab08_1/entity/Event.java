@@ -29,5 +29,6 @@ public class Event {
     @ManyToMany(mappedBy = "eventHistory", cascade = CascadeType.PERSIST)
     @Builder.Default
     List<Participant> participant = new ArrayList<>();
-
+    @ElementCollection
+    List<String> images;
 }

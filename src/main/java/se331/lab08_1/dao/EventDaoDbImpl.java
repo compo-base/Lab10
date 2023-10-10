@@ -22,7 +22,6 @@ public class EventDaoDbImpl implements EventDao{
         public Integer getEventSize(){
             return Math.toIntExact(eventRepository.count());
         }
-
         @Override
         public Page<Event> getEvents(Integer pageSize, Integer page){
             // Determine the total number of events in the database.
@@ -37,12 +36,10 @@ public class EventDaoDbImpl implements EventDao{
             // Use the PageRequest object to fetch the desired page of events from the database.
             return eventRepository.findAll(PageRequest.of(page, pageSize));
         }
-
         @Override
         public Event getEvent(Long id){
             return eventRepository.findById(id).orElse(null);
         }
-
         @Override
         public Event save(Event event){
             return eventRepository.save(event);
