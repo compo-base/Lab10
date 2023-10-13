@@ -25,4 +25,5 @@ public class EventDTO {
     List<ParticipantDTO> participants;
     List<String> images;
 
+
 }
