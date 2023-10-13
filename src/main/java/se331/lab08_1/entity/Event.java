@@ -1,6 +1,7 @@
 package se331.lab08_1.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -24,6 +25,7 @@ public class Event {
     String date;
     String time;
     Boolean petAllowed;
+    @JsonManagedReference
     @ManyToOne
     Organizer organizer;
     @ManyToMany(mappedBy = "eventHistory", cascade = CascadeType.PERSIST)

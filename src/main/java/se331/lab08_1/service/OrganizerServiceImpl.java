@@ -15,12 +15,22 @@ import java.util.List;
 public class OrganizerServiceImpl implements OrganizerService{
     final OrganizerDao organizerDao;
     @Override
-    public List<Organizer> getAllOrganizer(){
-        return organizerDao.getOrganizer(Pageable.unpaged()).getContent();
-    }
-    @Override
-    public Page<Organizer> getOrganizer(Integer page,Integer pageSize){
-        return organizerDao.getOrganizer(PageRequest.of(page,pageSize));
+    public Integer getOrganizerSize(){
+        return organizerDao.getEventSize();
     }
 
+    @Override
+    public Page<Organizer> getOrganizers(Integer pageSize, Integer page){
+        return organizerDao.getEvents(pageSize, page);
+    }
+
+    @Override
+    public Organizer getOrganizer(Long id){
+        return organizerDao.getEvent(id);
+    }
+
+    @Override
+    public Organizer save(Organizer organizer){
+        return organizerDao.save(organizer);
+    }
 }

@@ -1,6 +1,7 @@
 package se331.lab08_1.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,8 +19,10 @@ public class Organizer {
     @EqualsAndHashCode.Exclude
     Long id;
     String name;
+    @JsonIgnore
     @OneToMany(mappedBy = "organizer")
     @Builder.Default
     List<Event> ownEvents = new ArrayList<>();
-
+    @ElementCollection
+    List<String> images;
 }
